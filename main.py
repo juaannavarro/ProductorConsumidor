@@ -1,4 +1,4 @@
-from productorconsumidor import *
+from prueba2 import *
 if __name__ == '__main__':
     
     t1 = threading.Thread(target=productor)
