@@ -1,13 +1,15 @@
-from prueba2 import *
-if __name__ == '__main__':
+from Productor_Consumidor import *
+if __name__ == "__main__":
+    cola = multiprocessing.Queue(2)
+    Proceso_productor = multiprocessing.Process(target=productor, args=(cola,))
+    Proceso_consumidor = multiprocessing.Process(target=consumidor, args=(cola,))
     
-    t1 = threading.Thread(target=productor)
-
-    t2 = threading.Thread(target=consumidor)
+    Proceso_productor.start()
+    Proceso_consumidor.start()
     
-    t1.start()
+    Proceso_productor.join()
+    Proceso_consumidor.join()
 
-    t2.start()
     
 
     
