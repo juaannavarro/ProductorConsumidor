@@ -20,7 +20,7 @@ def consumidor(cola, semaforo_P, semaforo_C):
         producto_generado = cola.get()
         print(f"-C: {producto_generado} consumido")
         semaforo_P.release()
-        time.sleep(4)
+        time.sleep(2)
         
     
 
